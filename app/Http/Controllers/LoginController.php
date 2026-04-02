@@ -22,4 +22,20 @@ class LoginController extends Controller
             'message' => 'Login success'
         ], 200);
     }
+
+    public function login123(Request $request)
+    {
+        if (
+            $request->email !== 'test@gmail.com1' ||
+            $request->password !== '123456'
+        ) {
+            return response()->json([
+                'message' => 'Invalid credentials'
+            ], 401);
+        }
+
+        return response()->json([
+            'message' => 'Login success'
+        ], 200);
+    }
 }
